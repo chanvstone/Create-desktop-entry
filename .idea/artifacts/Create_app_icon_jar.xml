@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Create app icon:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Create_app_icon_jar</output-path>
+    <root id="archive" name="Create app icon.jar">
+      <element id="module-output" name="Create app icon" />
+    </root>
+  </artifact>
+</component>
