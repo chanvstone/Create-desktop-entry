@@ -9,9 +9,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class View extends JFrame {
-    private Model model;
+    private final Model model;
 
     public View() {
         super(Model.FRAME_TITLE);
@@ -113,6 +114,7 @@ public class View extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 FileChooser fileChooser = new FileChooser(FileChooser.FILES_ONLY);
                 fileChooser.setFileSelectionMode(FileChooser.FILES_ONLY);
+                fileChooser.setCurrentDirectory(new File(model.getPath()));
                 if (fileChooser.showOpenDialog(View.this) == FileChooser.APPROVE_OPTION) {
                     String path = fileChooser.getSelectedFile().getPath();
                     exec_textField.setText(path);
@@ -141,6 +143,7 @@ public class View extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 FileChooser fileChooser = new FileChooser(FileChooser.FILES_ONLY);
                 fileChooser.setFileSelectionMode(FileChooser.FILES_ONLY);
+                fileChooser.setCurrentDirectory(new File(model.getPath()));
                 if (fileChooser.showOpenDialog(View.this) == FileChooser.APPROVE_OPTION) {
                     String path = fileChooser.getSelectedFile().getPath();
                     icon_textField.setText(path);
